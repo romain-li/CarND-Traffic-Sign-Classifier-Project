@@ -53151,6 +53151,11 @@ When epoches is more than 25, the accuracy is shocked. So I choosed 25 epochs.</
 <li>Different data generation function.<br>
 First I generate the addional data by resize the images, but accuracy is 65%.</li>
 </ul>
+<p>The network is based on LeNet, because I think the traffic sign is simillar complex with the numbers, and I've add a new Conv-Pool Layer to make this network more complex, but the result hasn't an obvious ascension.<br>
+Because the traffic sign can be anywhere or any angle in the image, so we need the convolutional layer the share the features.<br>
+The pooling layer is just use for reduce the size of features, so this network can be fitted in the short time.<br>
+I have use two dropout layer, that will avoid the result over fitting.<br>
+RELU activation is better than sigmoid, because it can backprop well on the large input.</p>
 
 </div>
 </div>
@@ -54764,7 +54769,28 @@ Speed limit (80km/h)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>No, the prediction result has only 60% accuracy.</p>
+<p>No, the prediction result has only 60% accuracy, lower than on the test set.</p>
+<table>
+<thead><tr>
+<th>Dataset</th>
+<th style="text-align:right">Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Validation Set</td>
+<td style="text-align:right">96.3%</td>
+</tr>
+<tr>
+<td>Test Set</td>
+<td style="text-align:right">88.8%</td>
+</tr>
+<tr>
+<td>Captured images</td>
+<td style="text-align:right">60%</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
